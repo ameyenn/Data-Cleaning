@@ -1,1 +1,45 @@
 
+#Data Structure of Files and resulting R structure.
+
+testX and trainY store data on the results of activities. Columns store the data as numeric. 
+trainX and trainy store data on who did the activity linked via row numbers in trainX[,1] to row numbers in testX, for example.
+subject file for each test and train stores the subject named VolunteerID who did the activity and got the result.
+
+Hence the structure is subject, activity (trainy/trainX), testy/testX
+
+Merging these data structures was sensible and one data set was created.
+
+#Describes the data variables
+
+The first four manin data tables structure is as follows:
+
+testX: (num) v1, v2, v3 .......
+testy: (num) v1
+
+trainX: (num) v1, v2, v3
+trainy: (num) v1
+
+The structure of the other three data tables as follows:
+
+variablesNames (num) V1
+               factor: names of the measurement to large to list.
+              
+subject (num) V1
+
+actLables (num) V1
+                factor: names of the activities: WAK etc
+              
+ 
+#Data Transformations
+
+1. Meaningful variable names were applied as shown in the code and readme files.
+
+For example:
+
+testX and trainy had the colnames changed from V1..... to meaningful names drawn from variableNames
+
+2. File creation, subseting and merging
+
+The main subset file XandYSubSet was created by merging X and Y, and each were made from merging.
+For example: X was formed from merging subject, testy, TestX.
+
